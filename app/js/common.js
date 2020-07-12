@@ -1,5 +1,3 @@
-$(function() {
-
-	// Custom JS
-
-});
+document.addEventListener('DOMContentLoaded', function(){
+	alert('hallo')
+})

@@ -2,68 +2,211 @@
 <html lang="ru">
 
 <head>
-
-	<meta charset="utf-8">
-	<!-- <base href="/"> -->
-
-	<title>OptimizedHTML 4</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Template Basic Images Start -->
-	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="icon" href="img/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-	<!-- Template Basic Images End -->
-	
-	<!-- Custom Browsers Color Start -->
-	<meta name="theme-color" content="#000">
-	<!-- Custom Browsers Color End -->
-
-	<link rel="stylesheet" href="css/main.min.css">
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="./style/style.css">
+	<title>Avito Glo Academy</title>
 </head>
 
 <body>
-
-	<!-- Custom HTML -->
-
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-8 offset-2">
-				
-				<img class="img-responsive"
-					src="img/@1x/preview.jpg"
-					srcset="img/@1x/preview.jpg 1x, img/@2x/preview.jpg 2x"
-					alt="Start HTML5 Template">
-
-				<br>
-
-				<h2>Welcome to startup HTML template OptimizedHTML 4!</h2>
-
-				<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Ad distinctio animi, dolorum eaque praesentium unde aliquid, mollitia itaque voluptate quos modi et incidunt tempora fugiat voluptatum quia esse dolor repellat.</p>
-				<p>Nemo velit incidunt assumenda, eaque, sequi vitae facilis doloribus qui totam, fuga iure dignissimos ab non praesentium. Vitae similique, corrupti aliquam nam modi explicabo distinctio qui cum officia ullam quam!</p>
-				<p>Aperiam veritatis debitis quibusdam animi totam quos mollitia aspernatur porro consectetur id quod tempore numquam, ullam ex quae quasi voluptatem incidunt placeat asperiores quas autem! Labore modi quae nulla illo!</p>
-
-				<br>
-
-				<div class="row">
-
-					<div class="col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo vero molestias, esse doloribus corrupti, nemo minus ullam tempore tenetur magni aut quos soluta sit adipisci eius expedita amet non.</div>
-					<div class="col-6">Odit enim harum minus nam excepturi quae vitae consectetur repudiandae natus neque ab asperiores repellat quo dicta vel accusamus voluptatum rerum autem eaque rem laudantium, sint veritatis. Minus, unde rem.</div>
-
+	<header>
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a href="index.html">
+						<img src="img/logo.svg" alt="">
+					</a>
 				</div>
-
-				<br>
-
+				<nav class="menu">
+					<ul class="menu__container">
+						<li class="menu__link"><a href="#" data-category="cloth">Одежда</a></li>
+						<li class="menu__link"><a href="#" data-category="foot">Обувь</a></li>
+						<li class="menu__link"><a href="#" data-category="toy">Игрушки</a></li>
+						<li class="menu__link"><a href="#" data-category="furniture">Мебель</a></li>
+						<li class="menu__link"><a href="#" data-category="tech">Техника</a></li>
+					</ul>
+				</nav>
+				<button class="btn add__ad">
+					Подать объявление
+				</button>
 			</div>
-			
+			<div class="search">
+				<form class="search__form">
+					<label class="search__label">
+						<input class="search__input" type="search">
+					</label>
+				</form>
+			</div>
+
+		</div>
+	</header>
+
+	<main>
+
+		<div class="container">
+			<ul class="catalog">
+
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+				<li class="card">
+					<img class="card__image" src="img/temp.jpg" alt="test">
+					<div class="card__description">
+						<h3 class="card__header">Тестовая карточка</h3>
+						<div class="card__price">4000 ₽</div>
+					</div>
+				</li>
+
+			</ul>
 		</div>
 
+
+	</main>
+
+	<div class="modal modal__add hide">
+		<div class="modal__block">
+			<h2 class="modal__header">Подать Объявление</h2>
+			<div class="modal__content">
+				<div><img class="modal__image modal__image-add" src="img/temp.jpg" alt="test"></div>
+				<form class="modal__submit">
+					<label class="modal__file-label">
+						<span class="btn modal__file-btn">Добавить фото</span>
+						<input class="modal__file-input" type="file" name="image" accept="image/*" required>
+					</label>
+
+					<label>
+						<span>Категория:</span>
+						<select name="category">
+							<option value="toy">Игрушки</option>
+							<option value="furniture">Мебель</option>
+							<option value="foot">Обувь</option>
+							<option value="cloth">Одежда</option>
+							<option value="tech">Техника</option>
+						</select>
+					</label>
+
+					<label>
+						<span>Название:</span>
+						<input name="nameItem" type="text" required>
+					</label>
+
+					<label>
+						<span>Состояние:</span>
+						<select name="status">
+							<option value="old">Б/у</option>
+							<option value="new">Новый</option>
+						</select>
+					</label>
+
+
+					<label>
+						<span>Описание:</span>
+						<textarea name="descriptionItem" maxlength="3000" required></textarea>
+					</label>
+
+					<label>
+						<span>Цена:</span>
+						<input name="costItem" type="number" required>
+					</label>
+					<div class="modal__btn-block">
+						<span class="modal__btn-warning">Заполните все поля</span>
+						<button class="btn modal__btn-submit">Отправить</button>
+					</div>
+				</form>
+			</div>
+			<button class="modal__close">&#10008;</button>
+		</div>
+	</div>
+
+	<div class="modal modal__item hide">
+		<div class="modal__block">
+			<h2 class="modal__header">Купить</h2>
+			<div class="modal__content">
+				<div><img class="modal__image modal__image-item" src="img/temp.jpg" alt="test"></div>
+				<div class="modal__description">
+					<h3 class="modal__header-item">Тестовый Телефон</h3>
+					<p>Состояние: <span class="modal__status-item">отличное</span></p>
+					<p>Описание:
+						<span class="modal__description-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aut deleniti dolores ex explicabo fugit hic?</span>
+					</p>
+					<p>Цена: <span class="modal__cost-item">4000 ₽</span></p>
+					<button class="btn">Купить</button>
+				</div>
+			</div>
+			<button class="modal__close">&#10008;</button>
+		</div>
 	</div>
 
 	<script src="js/scripts.min.js"></script>
