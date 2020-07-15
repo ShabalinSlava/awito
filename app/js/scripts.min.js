@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
 	const dataBase = JSON.parse(localStorage.getItem('awito')) || [];
+	let counter = dataBase.length;
 
 	// Переменные
 	const modalAdd = document.querySelector('.modal__add')
@@ -14,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function(){
 	const modalImageAdd= document.querySelector('.modal__image-add')
 	const textFileBtn = modalFileBtn.textContent;
 	const srcModalImage = modalImageAdd.src;
+	const modalImageItem = document.querySelector('.modal__image-item')
+	const modalHeaderItem = document.querySelector('.modal__header-item')
+	const modalStatusItem = document.querySelector('.modal__status-item')
+	const modalDescItem = document.querySelector('.modal__description-item')
+	const modalCostItem = document.querySelector('.modal__cost-item')
+	const searchInput = document.querySelector('.search__input')
+	const menuContainer = document.querySelector('.menu__container')
 
 	// Получение элементов формы
 	const  elementsModalSubmit = [...modalSubmit.elements]
@@ -49,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function(){
 	};
 
 	// Вывод карточек
-	const renderCard = () => {
+	const renderCard = (DB = dataBase) => {
 		catalog.textContent = '';
-		dataBase.forEach((item, i) => {
+		DB.forEach((item) => {
 			catalog.insertAdjacentHTML('beforeend', `
-			<li class="card" data-id="${i}">
+			<li class="card" data-id="${item.id}">
 				<img class="card__image" src="data:image/jpeg;base64,${item.image}" alt="test">
 				<div class="card__description">
 					<h3 class="card__header">${item.nameItem}</h3>
@@ -63,6 +71,16 @@ document.addEventListener('DOMContentLoaded', function(){
 			`)
 		})
 	}
+
+	// Поиск
+	searchInput.addEventListener('input', () => {
+		const valueSearch = searchInput.value.trim().toLowerCase()
+		if (valueSearch.length > 2) {
+			const result = dataBase.filter(item => item.nameItem.toLowerCase().includes(valueSearch) ||
+			item.descriptionItem.toLowerCase().includes(valueSearch))
+			renderCard(result)
+		}
+	});
 
 	// Обработчик на кнопку добавления фото
 	modalFileInput.addEventListener('change', event => {
@@ -96,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		for (const elem of elementsModalSubmit) {
 			itemObj[elem.name] = elem.value;
 		}
+		itemObj.id = counter++
 		itemObj.image = infoPhoto.base64;
 		dataBase.push(itemObj) // Добавление в базу
 		closeModal({target: modalAdd});
@@ -114,11 +133,26 @@ document.addEventListener('DOMContentLoaded', function(){
 	// Открываем карточку с товарами
 	catalog.addEventListener('click', event => {
 		const target = event.target;
-		if (target.closest('.card')) {
+		const card = target.closest('.card')
+		if (card) {
+			const item = dataBase.find(obj => obj.id === +card.dataset.id);
+			modalImageItem.src = `data:image/jpeg;base64,${item.image}`
+			modalHeaderItem.textContent = item.nameItem
+			modalStatusItem.textContent = item.status === 'new' ? 'Новый' : 'Б/У';
+			modalDescItem.textContent = item.descriptionItem
+			modalCostItem.textContent = item.costItem
 			modalItem.classList.remove('hide')
 			document.addEventListener('keydown', closeModal) 
 			}	
 		});
+
+		menuContainer.addEventListener('click', event => {
+			const target = event.target
+			if (target.tagName === 'A') {
+				const result = dataBase.filter(item => item.category === target.dataset.category);
+				renderCard(result)
+			}
+		})
 	
 	modalAdd.addEventListener('click', closeModal); // Закрытие модального окна через функции closeModal
 	modalItem.addEventListener('click', closeModal); // Закрытие модального окна через функции closeModal
